@@ -1,23 +1,105 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class ="pyg_index">
+  <!-- 搜索框 开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框 结束 -->
+  <!-- 轮播图开始 -->
+  <view class="index_swiper">
+  <!-- 
+    1. swiper标签存在默认宽度高度 100%*150px
+    2. image标签也存在默认宽度和高度 320px*240px
+    3. 设计图片合轮播图
+       1. 找原图宽高
+       2. 让图片高度自适应 宽度等于100%
+       3. 让swiper标签的高度 变成和图片的高等比例
+    4. 图片标签
+       mode属性 渲染模式
+         widethFix 让图片的标签 合 图片标签的内容等比例变化
+   -->
+  <swiper autoplay indicator-dots circular>
+    <swiper-item 
+    wx:for="{{swiperList}}"
+    wx:key="goods_id"
+     >
+        <image mode="widthFix" src="{{item}}">
+        </image>    
+    </swiper-item>    
+  </swiper>
+
+</view>
+<!-- 轮播图结束 -->
+
+<!-- 导航开始 -->
+<view class = "index_cate">
+    <navigator url="/pages/04/04" open-type="switchTab"
+    wx:for="{{catesList}}"
+    wx:key="name"
+    >
+    <image mode="widthFix" src = "{{item}}"></image>
+    </navigator>
+</view>
+<!-- 导航结束 -->
+
+<view class="selection">
+  <view class="header0">
+     <view class="title">基本信息
+        <view class="t2">Position  崇文路与学堂路交汇处西交利物浦大学体育馆</view>
+        <view class="t2">Time  10:00 - 21:00</view>
+        <view class="t2"><E-mail>E-mail  Sports.Centre@xjtlu.edu.cn</E-mail></view>
+        <!-- <map></map> -->
+        <!-- <view bindtap="getLocation">
+            <image mode="widthFix" class="index_cate" src="https://z3.ax1x.com/2021/04/18/cIzCnK.png">
+                
+            </image>
+            <view class="map_container">
+              <map class='map' longitude='{{120.749341}}' latitude='{{31.277002}}' scale='{{12}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' include-points="" bindtap="bi"
+           show-location></map>
+        </view>
+        </view> -->
+        
+        <view bindtap="getLocation">
+            <image mode="widthFix" class="index_cate" src="https://z3.ax1x.com/2021/04/24/cvkyCQ.png" style="width:{{500}}rpx; height:{{imgheight }}rpx;" >
+               
+                
+            </image>
+        </view>
+
+     </view>
+     
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+</view>
+  
+<view class="selection">
+    <view class="header">
+        <view class="title">
+            场馆服务
+        </view>
+    </view>
+
+  <view class="content">
+        <view class="content-item">
+            <image  src="../../服务图标/自动沐浴.png"/>
+             <view class = "content-item-text">
+                 <text>沐浴</text>
+             </view>              
+        </view>
+        <view class="content-item">
+            <image  src="../../服务图标/空调.png"/>
+             <view class = "content-item-text">
+                 <text>空调</text>
+             </view>
+        </view>
+        <view class="content-item">
+            <image  src="../../服务图标/wifi图标.png"/>
+             <view class = "content-item-text">
+                 <text>Wifi</text>
+             </view>
+        </view>
+        <view class="content-item">
+            <image  src="../../服务图标/租柜图标.png"/>
+             <view class = "content-item-text">
+                 <text>租柜</text>
+             </view>
+        </view>
+    </view>
+</view>
 </view>

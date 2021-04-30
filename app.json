@@ -1,13 +1,51 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/demo01/demo01",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/04/04",
+    "pages/cal/cal",
+    "pages/check/check",
+    "pages/chooseCourt/chooseCourt",
+    "pages/appointment_date/appointment_date",
+    "pages/orderInformation/orderInformation"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0094ff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#0094ff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home-o.png"
+      },
+      {
+        "pagePath": "pages/04/04",
+        "text": "场地",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/category-o.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ],
+    "color": "#0094ff",
+    "selectedColor": "#ff6540",
+    "backgroundColor": "#C0C0C0"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

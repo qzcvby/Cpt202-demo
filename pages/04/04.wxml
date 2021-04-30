@@ -1,0 +1,356 @@
+<!-- 1.顶端场地类型 -->
+<view >
+ <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}" >
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">篮球</view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">羽毛球</view>
+  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">健身</view>
+  <view class="tab-item {{currentTab==5?'active':''}}" data-current="3" bindtap="swichNav">乒乓球</view>
+</scroll-view>
+
+
+
+ <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item data-current="0">
+   <scroll-view scroll-y="true" class="scoll-h" >
+    <block wx:for="{{[0]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/篮球.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">篮球全场</view>
+       <view class="tag">¥200起</view>
+     
+      </view>
+      <navigator url="/pages/test/test" class="askBtn"  open-type='navigateTo'>预订</navigator> 
+      <!-- <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchnge="datePickerBindchange" class="askBtn" range="选择日期">
+           {{dateValue}}
+     </picker> -->
+
+     
+     <!-- 时间部分 -->
+<view class = "item">
+
+</view>
+
+     </view>
+    </block>
+    <block wx:for="{{[1]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/篮球.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">篮球半场</view>
+       <view class="tag">¥100起</view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <navigator url="/pages/cal/cal" class="askBtn"  open-type='navigateTo'>预订</navigator> 
+     </view>
+    </block>
+   </scroll-view>
+ </swiper-item>
+
+
+ <swiper-item data-current="1">
+   <scroll-view scroll-y="true" class="scoll-h" >
+    <block wx:for="{{[0]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/羽毛球.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">羽毛球全场</view>
+       <view class="tag">¥50起</view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <navigator url="/pages/test/test" class="askBtn">预订</navigator> 
+      <!-- <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker> -->
+     </view>
+    </block>
+    <block wx:for="{{[1]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/羽毛球.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">羽毛球半场</view>
+       <view class="tag">¥25起</view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+   </scroll-view>
+
+  </swiper-item>
+
+  <swiper-item data-current="2">
+   <scroll-view scroll-y="true" class="scoll-h" >
+    <block wx:for="{{[0]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">09:00-10:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator> 
+      -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[1]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">10:00-11:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker></view>
+    </block>
+
+    <block wx:for="{{[2]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">11:00-12:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker></view>
+    </block>
+
+    <block wx:for="{{[3]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">12:00-13:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker></view>
+    </block>
+
+    <block wx:for="{{[4]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">13:00-14:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[5]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">14:00-15:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+
+    <block wx:for="{{[6]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">15:00-16:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[7]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">16:00-17:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[8]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">17:00-18:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[8]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">18:00-19:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[9]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">19:00-20:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+
+    <block wx:for="{{[10]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/健身.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">健身单次票</view>
+       <view class="tag">¥20</view>
+       <view class="answerHistory">20:00-21:00 </view>
+       <!-- <view class="tag">知名情感博主</view>
+       <view class="answerHistory">134个回答，2234人听过 </view> -->
+      </view>
+      <!-- <navigator url="/pages/askExpert/expertDetail" class="askBtn">预订</navigator>  -->
+      <picker mode="date" value="{{dateValue}}" start="1999-01-01" end="2999-12-12" bindchange="datePickerBindchange" class="askBtn" >
+           {{dateValue}}
+     </picker>
+     </view>
+    </block>
+   </scroll-view>
+
+  </swiper-item>
+
+ 
+
+  <swiper-item data-current="3">
+   <scroll-view scroll-y="true" class="scoll-h" >
+    <block wx:for="{{[0]}}" wx:key="*this">
+     <view class="item-ans">
+      <view class="avatar">
+       <image class="img" src="/图标库/乒乓球.png"></image>
+      </view>
+      <view class="expertInfo">
+       <view class="name">乒乓球场地</view>
+       <view class="tag">¥25起</view>
+     
+      </view>
+      <navigator url="/pages/appointment_date/appointment_date" class="askBtn">预订</navigator> 
+      
+     </view>
+    </block>
+   
+   </scroll-view>
+
+  </swiper-item>
+
+
+ 
+ 
+
+</swiper>
+</view>
